@@ -3,11 +3,6 @@
     height: 400px;
   }
 
-.content{
-    grid-area: c;
-    background-color: blue;
-}
-
 .item{
   color: red;
 } 

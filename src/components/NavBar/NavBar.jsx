@@ -6,10 +6,10 @@ function NavBar() {
         <nav className={classes.nav}>
 
             <div className={classes.item}>
-                <a alt="Profile" href="https://github.com/s3rbug">Profile</a>
+                <a alt="Profile" href="/profile">Profile</a>
             </div>
             <div className={classes.item}>
-                <a alt="Messages" href="https://github.com/s3rbug">Messages</a>
+                <a alt="Messages" href="/dialogs">Messages</a>
             </div>
             <div className={classes.item}>
                 <a alt="News" href="https://github.com/s3rbug">News</a>

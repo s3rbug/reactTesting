@@ -6,10 +6,10 @@ function MyPosts() {
     return (
         <div>
             My posts
-            <div>
+            <div className={classes.changePost}>
                 <textarea></textarea>
-                <button>Add post</button>
-                <button>Remove</button>
+                <button id={classes.addPost}>Add post</button>
+                <button id={classes.removePost}>Remove</button>
             </div>
             <div className={classes.posts}>
                 <Post likeCount="15" name="Naruto" message="Я єбав, мене сосали"></Post>

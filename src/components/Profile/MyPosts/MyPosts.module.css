@@ -1,0 +1,23 @@
+.changePost button{
+    height: 20px;
+    margin-right: 5px;
+  display: inline-block;
+  align-self: flex-end;
+}
+
+.changePost{
+    background-color: blueviolet;
+    position: relative;
+    box-sizing: border-box;
+    height: 80px;
+    display: flex;
+}
+
+.changePost textarea{
+    padding: 0;
+    margin-right: 5px;
+    box-sizing: border-box;
+    height: 80px;
+    width: 300px;
+    float: left;
+}
