@@ -5,4 +5,10 @@
 
 .item a{
     color: white;
+    text-decoration: none;
+}
+
+.item .activeLink{
+    color: gold;
+    font-size: large;
 }

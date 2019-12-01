@@ -5,7 +5,6 @@ import Post from './Post/Post';
 function MyPosts() {
     return (
         <div>
-            My posts
             <div className={classes.changePost}>
                 <textarea></textarea>
                 <button id={classes.addPost}>Add post</button>
