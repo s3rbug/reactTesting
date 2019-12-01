@@ -12,13 +12,13 @@ function NavBar() {
                 <a alt="Messages" href="/dialogs">Messages</a>
             </div>
             <div className={classes.item}>
-                <a alt="News" href="https://github.com/s3rbug">News</a>
+                <a alt="News" href="/news">News</a>
             </div>
             <div className={classes.item}>
-                <a alt="Music" href="https://github.com/s3rbug">Music</a>
+                <a alt="Music" href="/music">Music</a>
             </div>
             <div className={classes.item}>
-                <a alt="Settings" href="https://github.com/s3rbug">Settings</a>
+                <a alt="Settings" href="/settings">Settings</a>
             </div>
 
         </nav>
