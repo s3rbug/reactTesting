@@ -12,25 +12,38 @@ function DialogItem(props){
 
 function Message(props){
     return(
-    <div className={classes.message}>{props.message}</div>       
+        <div className={classes.message}>{props.message}</div>
     );
 }
 
 function Dialogs(props) {
+    let dialogs = [
+        {id: 0, name: 'Stepan'},
+        {id: 1, name: 'Taras'},
+        {id: 2, name: 'Vitya'},
+        {id: 3, name: 'Vita'},
+        {id: 4, name: 'Katya'}
+    ];
+
+    let messages = [
+        {id: 0, message: "How is your dick?"},
+        {id: 1, message: '1'},
+        {id: 2, message: '2'},
+        {id: 3, message: '3'},
+        {id: 4, message: '4'}
+    ];
+
+    let dialogsElements = dialogs.map(data => <DialogItem id={data.id} name={data.name}/>);
+    let messagesElements = messages.map(data => <Message message={data.message}></Message>);
+
     return ( 
         <div>
             <div className={classes.dialogs}>
                 <div className={classes.dialogItems}>
-                    <DialogItem id='0' name='Stepan'></DialogItem>
-                    <DialogItem id='1' name='Taras'></DialogItem>
-                    <DialogItem id='2' name='Vitya'></DialogItem>
-                    <DialogItem id='3' name='Vita'></DialogItem>
-                    <DialogItem id='4' name='Katya'></DialogItem>
+                    {dialogsElements}
                 </div>
                 <div className={classes.messages}>
-                    <Message message="How is your sister?"></Message>
-                    <Message message="How is your brother?"></Message>
-                    <Message message="How is your dick?"> </Message>
+                    {messagesElements}
                 </div>
             </div>
         </div>
