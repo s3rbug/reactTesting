@@ -1,0 +1,12 @@
+.wrapper{
+    text-align: center;
+}
+
+.item{
+    float: left;
+}
+
+.header{
+    font-size: large;
+    color: white;
+}

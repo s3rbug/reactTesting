@@ -4,7 +4,7 @@ import Post from './Post/Post';
 
 function MyPosts(props) {
     
-    let postsElements = props.postsData.map(data => <Post likeCount={data.likeCount} name={data.name} message={data.postText} image = {data.image}></Post>);
+    let postsElements = props.posts.map(data => <Post likeCount={data.likeCount} name={data.name} message={data.postText} image = {data.image}></Post>);
 
     return (
         <div>
