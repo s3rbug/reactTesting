@@ -1,12 +1,15 @@
 .wrapper{
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.item{
-    float: left;
+.lastFriends{
+    margin-top: 40px;
 }
 
 .header{
-    font-size: large;
+    font-size: x-large;
     color: white;
+    text-align: center;
+    display: block;
 }

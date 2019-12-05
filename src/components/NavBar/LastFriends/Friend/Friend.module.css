@@ -1,3 +1,12 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.wrapper span{
+    text-decoration: none;
+}
+
 .image{
     width: 40px;
     border-radius: 100%;
