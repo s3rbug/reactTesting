@@ -6,7 +6,6 @@
 }
 
 .changePost{
-    position: relative;
     box-sizing: border-box;
     height: 80px;
     display: flex;
@@ -19,5 +18,4 @@
     box-sizing: border-box;
     height: 80px;
     width: 300px;
-    float: left;
 }

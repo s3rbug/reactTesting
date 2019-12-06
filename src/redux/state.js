@@ -1,3 +1,5 @@
+import {rerenderEverything} from './../render';
+
 let state = {
     profilePage: {
         posts: [
@@ -24,5 +26,17 @@ let state = {
         ]
     }
 };
+
+export function addPost(postMessage){
+    let newPost = {
+        id: 5,
+        postText: postMessage,
+        likeCount: 0,
+        name: "Sakura",
+        image: "https://www.trzcacak.rs/myfile/full/226-2262207_transparent-sakuras-doing-the-sakura-with-long-hair.png"
+    };
+    state.profilePage.posts.push(newPost);
+    rerenderEverything(state);
+}
 
 export default state;
