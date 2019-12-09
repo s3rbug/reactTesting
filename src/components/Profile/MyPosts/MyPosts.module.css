@@ -1,8 +1,9 @@
 .changePost button{
     height: 20px;
     margin-right: 5px;
-  display: inline-block;
-  align-self: flex-end;
+    display: inline-block;
+    align-self: flex-end;
+    box-sizing: border-box;
 }
 
 .changePost{
@@ -13,9 +14,9 @@
 }
 
 .changePost textarea{
-    padding: 0;
     margin-right: 5px;
     box-sizing: border-box;
     height: 80px;
     width: 300px;
+    align-self: flex-end;
 }

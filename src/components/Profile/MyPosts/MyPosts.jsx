@@ -5,16 +5,21 @@ import Post from './Post/Post';
 function MyPosts(props) {
     let postsElements = props.posts.map(data => <Post likeCount={data.likeCount} name={data.name} message={data.postText} image = {data.image}></Post>);
     let newPostElement = React.createRef();
-    function addPost(event){
-        props.addPost(newPostElement.current.value);
-        newPostElement.current.value = "";
+
+    function onAddPost(){
+        props.addPost()
+    }
+
+    function onChangePost(){
+        let text = newPostElement.current.value
+        props.updateNewPostText(text)
     }
 
     return (
         <div>
             <div className={classes.changePost}>
-                <textarea ref={newPostElement}></textarea>
-                <button onClick={addPost} id={classes.addPost}>Add post</button>
+                <textarea onChange={onChangePost} value={props.newPostText} ref={newPostElement}/>
+                <button onClick={onAddPost}>Add post</button>
             </div>
             <div className={classes.posts}>
                 {postsElements}
