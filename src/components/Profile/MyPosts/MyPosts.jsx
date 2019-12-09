@@ -1,31 +1,41 @@
-import React from 'react';
-import classes from './MyPosts.module.css';
-import Post from './Post/Post';
+import React from "react";
+import classes from "./MyPosts.module.css";
+import Post from "./Post/Post";
 
 function MyPosts(props) {
-    let postsElements = props.posts.map(data => <Post likeCount={data.likeCount} name={data.name} message={data.postText} image = {data.image}></Post>);
-    let newPostElement = React.createRef();
+  const postsElements = props.posts.map(data => (
+    <Post
+      likeCount={data.likeCount}
+      name={data.name}
+      message={data.postText}
+      image={data.image}
+    />
+  ));
 
-    function onAddPost(){
-        props.addPost()
-    }
+  const newPostElement = React.createRef();
 
-    function onChangePost(){
-        let text = newPostElement.current.value
-        props.updateNewPostText(text)
-    }
+  function onAddPost() {
+    props.dispatch({ type: "ADD-POST" });
+  }
 
-    return (
-        <div>
-            <div className={classes.changePost}>
-                <textarea onChange={onChangePost} value={props.newPostText} ref={newPostElement}/>
-                <button onClick={onAddPost}>Add post</button>
-            </div>
-            <div className={classes.posts}>
-                {postsElements}
-            </div>
-        </div>
-    );
+  function onChangePost() {
+    const text = newPostElement.current.value;
+    props.dispatch({ type: "UPDATE-NEW-POST-TEXT", newText: text });
+  }
+
+  return (
+    <div>
+      <div className={classes.changePost}>
+        <textarea
+          onChange={onChangePost}
+          value={props.newPostText}
+          ref={newPostElement}
+        />
+        <button onClick={onAddPost}>Add post</button>
+      </div>
+      <div className={classes.posts}>{postsElements}</div>
+    </div>
+  );
 }
 
 export default MyPosts;

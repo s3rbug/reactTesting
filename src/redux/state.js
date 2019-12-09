@@ -1,4 +1,4 @@
-let store = {
+const store = {
   _state: {
     profilePage: {
       posts: [
@@ -27,34 +27,36 @@ let store = {
     }
   },
 
-  getState(){
-    return this._state;
+  _callSubscriber() {
   },
 
-  addPost () {
-    const newPost = {
-      id: 5,
-      postText: this._state.profilePage.newPostText,
-      likeCount: 0,
-      name: 'Sakura',
-      image: 'https://www.trzcacak.rs/myfile/full/226-2262207_transparent-sakuras-doing-the-sakura-with-long-hair.png'
-    }
-    this._state.profilePage.posts.push(newPost)
-    this._state.profilePage.newPostText = ''
-    this._callSubscriber(this._state)
+  getState() {
+    return this._state
   },
 
-  _callSubscriber(){
-    console.log(1);
-  },
-
-  updateNewPostText(newText){
-    this._state.profilePage.newPostText = newText
-    this._callSubscriber(this._state)
-  },
-
-  subscribe (observer){
+  subscribe(observer) {
     this._callSubscriber = observer
+  },
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      const newPost = {
+        id: 5,
+        postText: this._state.profilePage.newPostText,
+        likeCount: 0,
+        name: 'Sakura',
+        image: 'https://www.trzcacak.rs/myfile/full/226-2262207_transparent-sakuras-doing-the-sakura-with-long-hair.png'
+      }
+      this._state.profilePage.posts.push(newPost)
+      this._state.profilePage.newPostText = ''
+      this._callSubscriber(this._state)
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.profilePage.newPostText = action.newText
+      this._callSubscriber(this._state)
+    }
+    else {
+      console.log("Wrong function name!");
+    }
   }
 }
 

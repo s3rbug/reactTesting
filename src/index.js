@@ -5,11 +5,12 @@ import * as serviceWorker from './serviceWorker'
 import store from './redux/state'
 import App from './App'
 
-let rerenderEverything = (state) => {
+const rerenderEverything = (state) => {
   ReactDOM.render(
-  <App state={state} 
-    addPost={store.addPost.bind(store)} 
-    updateNewPostText={store.updateNewPostText.bind(store)} />, document.getElementById('root'))
+    <App
+      state={state}
+      dispatch={store.dispatch.bind(store)}
+    />, document.getElementById('root'))
 }
 
 rerenderEverything(store.getState())
