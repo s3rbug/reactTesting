@@ -2,6 +2,10 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
+import {
+  sendMessageAction,
+  updateNewMessageTextAction
+} from "./../../redux/state";
 
 function Dialogs(props) {
   const dialogsElements = props.messagesPage.dialogs.map(data => (
@@ -10,10 +14,16 @@ function Dialogs(props) {
   const messagesElements = props.messagesPage.messages.map(data => (
     <Message message={data.message} />
   ));
-  const sendElement = React.createRef();
-  function onSend(event) {
-    console.log(sendElement.current.value);
-  }
+
+  let onSend = () => {
+    props.dispatch(sendMessageAction());
+  };
+
+  let onChange = e => {
+    console.log(e.target.value);
+
+    props.dispatch(updateNewMessageTextAction(e.target.value));
+  };
 
   return (
     <div>
@@ -22,7 +32,11 @@ function Dialogs(props) {
         <div className={classes.messages}>
           {messagesElements}
           <div className={classes.enter}>
-            <textarea ref={sendElement} />
+            <textarea
+              placeholder="Enter your message"
+              value={props.messagesPage.newMessageText}
+              onChange={onChange}
+            />
             <button onClick={onSend}>Send</button>
           </div>
         </div>
