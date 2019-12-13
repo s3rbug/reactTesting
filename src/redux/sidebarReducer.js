@@ -1,4 +1,6 @@
-function profileReducer(state, action) {
+let initialState = {}
+
+function profileReducer(state = initialState, action) {
 
     return state;
 }
