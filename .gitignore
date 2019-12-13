@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-/src/redux/store,js
+/src/redux/store.js
 
 # production
 /build
