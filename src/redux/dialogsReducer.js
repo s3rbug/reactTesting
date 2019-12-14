@@ -21,7 +21,6 @@ let initialState = {
 
 function dialogsReducer(state = initialState, action) {
     if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-        debugger
         state.newMessageText = action.newMessage
     }
     else if (action.type === SEND_MESSAGE) {

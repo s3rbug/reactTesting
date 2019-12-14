@@ -4,14 +4,13 @@ import './index.css'
 import * as serviceWorker from './serviceWorker'
 import store from './redux/reduxStore'
 import App from './App'
+import StoreContext from './StoreContext'
 
 const rerenderEverything = (state) => {
   ReactDOM.render(
-    <App
-      state={state}
-      dispatch={store.dispatch.bind(store)}
-      store={store}
-    />, document.getElementById('root'))
+    <StoreContext.Provider value={store}>
+      <App />
+    </StoreContext.Provider>, document.getElementById('root'))
 }
 
 rerenderEverything(store.getState())
