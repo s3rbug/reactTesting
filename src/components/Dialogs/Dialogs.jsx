@@ -5,10 +5,10 @@ import DialogItem from "./DialogItem/DialogItem";
 
 function Dialogs(props) {
   const dialogsElements = props.messagesPage.dialogs.map(data => (
-    <DialogItem id={data.id} name={data.name} />
+    <DialogItem key={data.id} id={data.id} name={data.name} />
   ));
   const messagesElements = props.messagesPage.messages.map(data => (
-    <Message message={data.message} />
+    <Message key={data.id} message={data.message} />
   ));
 
   let onSend = () => {
@@ -18,6 +18,17 @@ function Dialogs(props) {
   let onChange = e => {
     props.changeMessage(e.target.value);
   };
+
+  function onPress(e) {
+    if (e.key === "Enter") {
+      if (e.shiftKey || e.ctrlKey) {
+        if (e.ctrlKey) props.changeMessage(props.newMessageText + "\n");
+        return;
+      }
+      e.preventDefault();
+      onSend();
+    }
+  }
 
   return (
     <div>
@@ -30,6 +41,7 @@ function Dialogs(props) {
               placeholder="Enter your message"
               value={props.messagesPage.newMessageText}
               onChange={onChange}
+              onKeyDown={onPress}
             />
             <button onClick={onSend}>Send</button>
           </div>

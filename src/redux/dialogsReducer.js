@@ -20,14 +20,17 @@ let initialState = {
 }
 
 function dialogsReducer(state = initialState, action) {
+    let stateCopy = { ...state }
     if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-        state.newMessageText = action.newMessage
+        stateCopy.newMessageText = action.newMessage
+        return stateCopy
     }
     else if (action.type === SEND_MESSAGE) {
-        state.messages.push({ id: 5, message: state.newMessageText })
-        state.newMessageText = ''
+        stateCopy.messages.push({ id: 5, message: state.newMessageText })
+        stateCopy.newMessageText = ''
+        return stateCopy
     }
-    return state;
+    return state
 }
 
 

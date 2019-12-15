@@ -9,24 +9,39 @@ function MyPosts(props) {
       name={data.name}
       message={data.postText}
       image={data.image}
+      key={data.id}
     />
   ));
 
   function onAddPost() {
-    //props.dispatch(addPostAction());
     props.addPost();
   }
 
   function onChangePost(e) {
     const text = e.target.value;
-    //props.dispatch(updateNewPostTextAction(text));
     props.changePost(text);
+  }
+
+  function onPress(e) {
+    if (e.key === "Enter") {
+      if (e.shiftKey || e.ctrlKey) {
+        if (e.ctrlKey) props.changePost(props.newPostText + "\n");
+        return;
+      }
+      e.preventDefault();
+      onAddPost();
+    }
   }
 
   return (
     <div>
       <div className={classes.changePost}>
-        <textarea onChange={onChangePost} value={props.newPostText} />
+        <textarea
+          onKeyDown={onPress}
+          onChange={onChangePost}
+          value={props.newPostText}
+          placeholder="Share anything with your friends"
+        />
         <button onClick={onAddPost}>Add post</button>
       </div>
       <div className={classes.posts}>{postsElements}</div>

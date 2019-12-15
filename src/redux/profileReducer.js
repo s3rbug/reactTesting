@@ -11,21 +11,24 @@ let initialState = {
 }
 
 function profileReducer(state = initialState, action) {
+    let stateCopy = { ...state }
     if (action.type === ADD_POST && state.newPostText !== '') {
-        const newPost = {
-            id: 5,
+        let newPost = {
+            id: state.posts[state.posts.length - 1].id + 1,
             postText: state.newPostText,
             likeCount: 0,
             name: 'Sakura',
             image: 'https://www.trzcacak.rs/myfile/full/226-2262207_transparent-sakuras-doing-the-sakura-with-long-hair.png'
         }
-        state.posts.push(newPost)
-        state.newPostText = ''
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-        state.newPostText = action.newText
-    }
 
-    return state;
+        stateCopy.posts.push(newPost)
+        stateCopy.newPostText = ''
+        return stateCopy;
+    } else if (action.type === UPDATE_NEW_POST_TEXT) {
+        stateCopy.newPostText = action.newText
+        return stateCopy;
+    }
+    return state
 }
 
 export const addPostAction = () => ({ type: ADD_POST })
