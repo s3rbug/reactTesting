@@ -26,7 +26,7 @@ function dialogsReducer(state = initialState, action) {
         return stateCopy
     }
     else if (action.type === SEND_MESSAGE) {
-        stateCopy.messages.push({ id: 5, message: state.newMessageText })
+        stateCopy.messages.push({ id: stateCopy.messages[stateCopy.messages.length - 1].id + 1, message: state.newMessageText })
         stateCopy.newMessageText = ''
         return stateCopy
     }

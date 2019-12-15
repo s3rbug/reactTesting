@@ -11,6 +11,7 @@ function NavBar() {
       <LinkItem to="/news" text="News" />
       <LinkItem to="/music" text="Music" />
       <LinkItem to="/settings" text="Settings" />
+      <LinkItem to="/users" text="Users" />
       <LastFriends />
     </nav>
   );
