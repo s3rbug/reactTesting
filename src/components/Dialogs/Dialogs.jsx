@@ -43,7 +43,9 @@ function Dialogs(props) {
               onChange={onChange}
               onKeyDown={onPress}
             />
-            <button onClick={onSend}>Send</button>
+            <button className={classes.send} onClick={onSend}>
+              Send
+            </button>
           </div>
         </div>
       </div>

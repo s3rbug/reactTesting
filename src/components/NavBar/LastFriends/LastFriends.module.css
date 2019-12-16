@@ -1,15 +1,19 @@
-.wrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.lastFriends{
-    margin-top: 40px;
+.lastFriends {
+  margin-top: 40px;
 }
 
-.header{
-    font-size: x-large;
-    color: white;
-    text-align: center;
-    display: block;
+.header {
+  font-size: x-large;
+  color: white;
+  text-align: center;
+  display: block;
+}
+
+.link {
+  text-decoration: none;
 }

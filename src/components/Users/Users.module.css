@@ -37,3 +37,7 @@
   border-color: #f63b3b !important;
   transition: all 0.4s ease 0s;
 }
+
+.info div {
+  color: white;
+}

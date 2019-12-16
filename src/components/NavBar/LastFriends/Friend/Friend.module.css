@@ -1,18 +1,19 @@
-.wrapper{
-    display: grid;
-    grid-template-columns: 1fr;
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-left: 10px;
 }
 
-.wrapper span{
-    text-decoration: none;
+.wrapper span {
+  text-decoration: none;
 }
 
-.image{
-    width: 40px;
-    border-radius: 100%;
+.image {
+  width: 40px;
+  border-radius: 100%;
 }
 
-.name{
-    font-size: small;
-    color: white;
+.name {
+  font-size: small;
+  color: white;
 }

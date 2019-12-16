@@ -5,7 +5,7 @@ import classes from "./../LastFriends.module.css";
 
 function FriendLink(props) {
   return (
-    <NavLink to={"/dialogs/" + props.id}>
+    <NavLink className={classes.link} to={"/dialogs/" + props.id}>
       <Friend className={classes.item} name={props.name} image={props.image} />
     </NavLink>
   );

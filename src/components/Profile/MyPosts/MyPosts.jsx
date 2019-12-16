@@ -42,7 +42,9 @@ function MyPosts(props) {
           value={props.newPostText}
           placeholder="Share anything with your friends"
         />
-        <button onClick={onAddPost}>Add post</button>
+        <button className={classes.add} onClick={onAddPost}>
+          Add post
+        </button>
       </div>
       <div className={classes.posts}>{postsElements}</div>
     </div>
