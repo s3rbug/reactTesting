@@ -41,3 +41,25 @@
 .info div {
   color: white;
 }
+
+.selected {
+  color: darkkhaki;
+  font-weight: bold;
+  font-size: large;
+  user-select: none;
+}
+
+.notSelected {
+  color: white;
+  user-select: none;
+}
+
+.notVisible {
+  visibility: hidden;
+}
+
+.slide {
+  font-size: larger;
+  color: white;
+  user-select: none;
+}
