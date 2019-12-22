@@ -1,10 +1,8 @@
 import React from "react"
 import classes from "./Users.module.css";
 import Preloader from "./../../common/Preloader/Preloader"
-
-
-const defaultImage =
-    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg";
+import { NavLink } from 'react-router-dom'
+import defaultImage from './../../assets/defaultImage.jpg'
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalCount / props.pageSize);
@@ -21,11 +19,13 @@ let Users = (props) => {
         <div key={u.id} className={props.isFetching ? classes.notVisible : classes.user}>
             <span>
                 <div>
-                    <img
-                        src={u.photos.large === null ? defaultImage : u.photos.large}
-                        alt=""
-                        className={classes.photo}
-                    />
+                    <NavLink to={'/profile/' + u.id}>
+                        <img
+                            src={u.photos.large === null ? defaultImage : u.photos.large}
+                            alt=""
+                            className={classes.photo}
+                        />
+                    </NavLink>
                 </div>
                 <div>
                     {u.followed ? (
