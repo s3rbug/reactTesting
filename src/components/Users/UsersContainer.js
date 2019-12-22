@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import Users from './Users'
-import { followAction, setUsersAction, setCurrentPageAction, setTotalCountAction } from '../../redux/usersReducer';
+import { follow, setUsers, setCurrentPage, setTotalUsersCount, toggleFetching } from '../../redux/usersReducer';
+import UsersAPIComponent from './UsersAPIComponent';
 
 const mapStateToProps = (state) => {
     return {
@@ -8,25 +8,17 @@ const mapStateToProps = (state) => {
         totalCount: state.usersPage.totalCount,
         pageSize: state.usersPage.pageSize,
         currentPage: state.usersPage.currentPage,
-        countPages: state.usersPage.countPages
+        countPages: state.usersPage.countPages,
+        isFetching: state.usersPage.isFetching
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAction(userId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAction(users))
-        },
-        setCurrentPage: (newCurrentPage) => {
-            dispatch(setCurrentPageAction(newCurrentPage))
-        },
-        setTotalUsersCount: (total) => {
-            dispatch(setTotalCountAction(total))
-        }
-    }
+const mapDispatchToProps = {
+    follow,
+    setUsers,
+    setCurrentPage,
+    setTotalUsersCount,
+    toggleFetching
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Users);
+export default connect(mapStateToProps, mapDispatchToProps)(UsersAPIComponent);

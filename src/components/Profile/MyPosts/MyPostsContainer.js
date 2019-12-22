@@ -1,18 +1,10 @@
-import { addPostAction } from "../../../redux/profileReducer"
-import { updateNewPostTextAction } from "../../../redux/profileReducer"
+import { changePost, addPost } from "../../../redux/profileReducer"
 import MyPosts from "./MyPosts"
 import { connect } from 'react-redux'
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addPost: () => {
-            dispatch(addPostAction())
-        },
-
-        changePost: (text) => {
-            dispatch(updateNewPostTextAction(text))
-        }
-    }
+const mapDispatchToProps = {
+    addPost,
+    changePost
 }
 
 const mapStateToProps = (state) => {
