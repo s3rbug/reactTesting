@@ -16,6 +16,15 @@
   outline: none;
   width: 150px;
 }
+
+.btn:disabled {
+  background: #c48709;
+}
+
+.btn2:disabled {
+  background: #c10606;
+}
+
 .btn {
   background: #f6b93b;
 }
