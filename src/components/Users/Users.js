@@ -3,7 +3,6 @@ import classes from "./Users.module.css";
 import Preloader from "./../../common/Preloader/Preloader"
 import { NavLink } from 'react-router-dom'
 import defaultImage from './../../assets/defaultImage.jpg'
-import { usersAPI } from './../../api/api'
 
 
 let Users = (props) => {
@@ -35,14 +34,7 @@ let Users = (props) => {
                             className={props.isFetching ? classes.notVisible : classes.btn}
                             disabled={props.followingInProgress.some(id => id === u.id)}
                             onClick={() => {
-                                props.toggleFollowingInProgress(true, u.id);
-                                usersAPI.unfollow(u.id)
-                                    .then(response => {
-                                        if (response.data.resultCode === 0) {
-                                            props.follow(u.id);
-                                        }
-                                        props.toggleFollowingInProgress(false, u.id);
-                                    })
+                                props.unfollow(u.id)
                             }}
                         >
                             Unfollow
@@ -51,14 +43,7 @@ let Users = (props) => {
                             <button
                                 className={props.isFetching ? classes.notVisible : classes.btn2}
                                 onClick={() => {
-                                    usersAPI.follow(u.id)
-                                        .then(response => {
-                                            props.toggleFollowingInProgress(true, u.id);
-                                            if (response.data.resultCode === 0) {
-                                                props.follow(u.id);
-                                            }
-                                            props.toggleFollowingInProgress(false, u.id);
-                                        })
+                                    props.follow(u.id)
                                 }
                                 }
                             >

@@ -1,3 +1,5 @@
+import { authAPI } from './../api/api'
+
 const SET_USER_DATA = 'SET-USER-DATA'
 const SET_IS_AUTH = 'SET-IS-AUTH'
 
@@ -30,5 +32,15 @@ function authReducer(state = initialState, action) {
 
 export const setAuthUserData = (data) => ({ type: SET_USER_DATA, data })
 export const setIsAuth = (isAuth) => ({ type: SET_IS_AUTH, isAuth })
+
+export const setMyProfile = () => {
+    return (dispatch) => {
+        authAPI.getMe().then((response) => {
+            if (response.resultCode === 0) {
+                dispatch(setAuthUserData(response.data))
+            }
+        })
+    }
+}
 
 export default authReducer;
