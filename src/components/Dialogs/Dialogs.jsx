@@ -7,6 +7,7 @@ function Dialogs(props) {
   const dialogsElements = props.messagesPage.dialogs.map(data => (
     <DialogItem key={data.id} id={data.id} name={data.name} />
   ));
+
   const messagesElements = props.messagesPage.messages.map(data => (
     <Message key={data.id} message={data.message} />
   ));

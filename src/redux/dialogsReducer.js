@@ -13,8 +13,8 @@ let initialState = {
         { id: 0, name: 'Stepan' },
         { id: 1, name: 'Taras' },
         { id: 2, name: 'Vitya' },
-        { id: 3, name: 'Vita' },
-        { id: 4, name: 'Katya' }
+        { id: 3, name: 'Avramenko' },
+        { id: 4, name: 'Putin' }
     ],
     newMessageText: ''
 }

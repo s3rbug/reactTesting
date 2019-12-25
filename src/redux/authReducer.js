@@ -35,11 +35,12 @@ export const setIsAuth = (isAuth) => ({ type: SET_IS_AUTH, isAuth })
 
 export const setMyProfile = () => {
     return (dispatch) => {
-        authAPI.getMe().then((response) => {
-            if (response.resultCode === 0) {
-                dispatch(setAuthUserData(response.data))
-            }
-        })
+        authAPI.getMe()
+            .then((response) => {
+                if (response.resultCode === 0) {
+                    dispatch(setAuthUserData(response.data))
+                }
+            })
     }
 }
 
