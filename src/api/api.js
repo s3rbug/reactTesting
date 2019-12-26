@@ -32,6 +32,18 @@ export const profileAPI = {
             .get(
                 `https://social-network.samuraijs.com/api/1.0/profile/${userId}`
             )
+            .then(promise => promise.data)
+    },
+
+    getStatus(userId) {
+        return instance
+            .get(`profile/status/${userId}`)
+            .then(promise => promise.data)
+    },
+
+    updateStatus(newStatus) {
+        return instance
+            .put(`profile/status`, { status: newStatus })
     }
 }
 

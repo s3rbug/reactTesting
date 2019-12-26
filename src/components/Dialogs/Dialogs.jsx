@@ -12,15 +12,15 @@ function Dialogs(props) {
     <Message key={data.id} message={data.message} />
   ));
 
-  let onSend = () => {
+  const onSend = () => {
     props.sendMessage();
   };
 
-  let onChange = e => {
+  const onChange = e => {
     props.changeMessage(e.target.value);
   };
 
-  function onPress(e) {
+  const onPress = e => {
     if (e.key === "Enter") {
       if (e.shiftKey || e.ctrlKey) {
         if (e.ctrlKey) props.changeMessage(props.newMessageText + "\n");
@@ -29,7 +29,7 @@ function Dialogs(props) {
       e.preventDefault();
       onSend();
     }
-  }
+  };
 
   return (
     <div>
