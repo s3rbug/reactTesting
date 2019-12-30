@@ -1,13 +1,19 @@
-.item{
-    color: white;
+.item {
+  color: white;
 }
 
-.item img{
-    height: 64px;
-    width: 64px;
-    border-radius: 100%;
+.item img {
+  height: 64px;
+  width: 64px;
+  border-radius: 100%;
 }
 
-.name{
-    font-weight: bold;
+.name {
+  font-weight: bold;
+}
+
+.myPost {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10%;
 }

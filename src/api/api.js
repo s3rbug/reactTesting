@@ -54,5 +54,9 @@ export const authAPI = {
                 .get(`auth/me`)
                 .then(response => response.data)
         );
+    },
+
+    login(name, password) {
+
     }
 }

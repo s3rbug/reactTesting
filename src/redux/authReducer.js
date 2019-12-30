@@ -8,7 +8,8 @@ let initialState = {
     email: null,
     login: null,
     isFetching: false,
-    isAuth: false
+    isAuth: false,
+    myId: 5515
 }
 
 function authReducer(state = initialState, action) {
@@ -16,7 +17,8 @@ function authReducer(state = initialState, action) {
         return {
             ...state,
             ...action.data,
-            isAuth: true
+            isAuth: true,
+            myId: action.data.id
         }
     }
     else if (action.type === SET_IS_AUTH) {

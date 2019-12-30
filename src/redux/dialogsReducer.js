@@ -1,4 +1,3 @@
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let initialState = {
@@ -15,26 +14,19 @@ let initialState = {
         { id: 2, name: 'Vitya' },
         { id: 3, name: 'Avramenko' },
         { id: 4, name: 'Putin' }
-    ],
-    newMessageText: ''
+    ]
 }
 
 function dialogsReducer(state = initialState, action) {
     let stateCopy = { ...state }
-    if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-        stateCopy.newMessageText = action.newMessage
-        return stateCopy
-    }
-    else if (action.type === SEND_MESSAGE) {
-        stateCopy.messages.push({ id: stateCopy.messages[stateCopy.messages.length - 1].id + 1, message: state.newMessageText })
-        stateCopy.newMessageText = ''
+    if (action.type === SEND_MESSAGE) {
+        stateCopy.messages.push({ id: stateCopy.messages[stateCopy.messages.length - 1].id + 1, message: action.message })
         return stateCopy
     }
     return state
 }
 
 
-export const changeMessage = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, newMessage: text })
-export const sendMessage = () => ({ type: SEND_MESSAGE })
+export const sendMessage = (message) => ({ type: SEND_MESSAGE, message })
 
 export default dialogsReducer

@@ -39,3 +39,8 @@
   align-self: flex-end;
   resize: none;
 }
+
+.posts {
+  display: grid;
+  grid-template-columns: 1fr;
+}
