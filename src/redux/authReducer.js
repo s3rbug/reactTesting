@@ -1,10 +1,11 @@
 import { authAPI } from './../api/api'
+import { stopSubmit } from 'redux-form'
 
 const SET_USER_DATA = 'SET-USER-DATA'
-const _DEBUG = 'I-JUST-KEEP-DEBUGGING-THIS-ONE'
+const _DEBUG = 'KEEP-CALM-AND-DEBUG-IT'
 
 let initialState = {
-    id: null,
+    userId: null,
     email: null,
     login: null,
     isAuth: false
@@ -30,7 +31,7 @@ export const setAuthUserData = (userId, email, login, isAuth) => ({ type: SET_US
 
 export const setMyProfile = () => {
     return (dispatch) => {
-        authAPI.getMe()
+        return authAPI.getMe()
             .then(response => {
                 if (response.resultCode === 0) {
                     let { id, login, email } = response.data
@@ -46,6 +47,10 @@ export const login = (email, password, rememberMe) => {
             .then(response => {
                 if (response.resultCode === 0) {
                     dispatch(setMyProfile());
+                }
+                else {
+                    const message = response.messages.length > 0 ? response.messages[0] : "Login or password seem to be wrong";
+                    dispatch(stopSubmit("login", { _error: message }))
                 }
             })
     }

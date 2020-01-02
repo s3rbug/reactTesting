@@ -11,11 +11,16 @@ function Header(props) {
       />
       <div className={classes.loginBlock}>
         {props.isAuth ? (
-          <div>
-            {props.login} - <button onClick={props.logout}>Log out</button>{" "}
+          <div className={classes.loginWrapper}>
+            {props.login} -{" "}
+            <button id={classes.logoutButton} onClick={props.logout}>
+              Log out
+            </button>{" "}
           </div>
         ) : (
-          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/login">
+            <button id={classes.loginButton}>Login</button>
+          </NavLink>
         )}
       </div>
     </header>

@@ -9,6 +9,11 @@
 
 .loginBlock {
   float: right;
+  height: 100%;
+}
+
+.loginWrapper {
+  height: 100%;
 }
 
 .loginBlock a {
@@ -17,4 +22,31 @@
 
 .loginBlock a:hover {
   color: darkmagenta;
+}
+
+#logoutButton,
+#loginButton {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  height: 100%;
+  font-size: large;
+  font-weight: lighter;
+  transition: 0.3s;
+  opacity: 0.8;
+}
+
+#logoutButton {
+  background-color: #f44336;
+}
+
+#loginButton {
+  background-color: #008cba;
+}
+
+#logoutButton:hover,
+#loginButton:hover {
+  opacity: 1;
 }
