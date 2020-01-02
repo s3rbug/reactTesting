@@ -12,8 +12,7 @@ let initialState = {
         { id: 2, userId: -20, isMine: false, postText: 'Аратімару, іди нахуй', likeCount: '67', name: 'Naruto', image: 'https://img.taplb.com/md5/7f/5c/7f5c2fb5e8ee79cc0c2c89546116b0f8?TapTapIcon' }
     ],
     status: '',
-    profile: null,
-    myId: 5515
+    profile: null
 }
 
 function profileReducer(state = initialState, action) {
@@ -56,10 +55,10 @@ export const setUser = (userId) => {
     }
 }
 
-export const getStatus = (userId, myId) => {
+export const getStatus = (userId) => {
     return (dispatch) => {
         if (isNaN(userId))
-            userId = myId;
+            userId = 5515;
         profileAPI.getStatus(userId)
             .then((response) => {
                 dispatch(setNewStatus(response))

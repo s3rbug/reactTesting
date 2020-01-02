@@ -2,8 +2,12 @@ import React from "react";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import { Field, reduxForm } from "redux-form";
+import { required, maxLength } from "./../../../utils/validators/validators";
+import { Textarea } from "./../../../common/FormsControls/FormsControls";
 
-function MyPosts(props) {
+const maxLength50 = maxLength(50);
+
+const MyPosts = props => {
   const postsElements = props.posts.map(data => (
     <Post
       isMine={data.isMine}
@@ -26,14 +30,15 @@ function MyPosts(props) {
       <div className={classes.posts}>{postsElements}</div>
     </div>
   );
-}
+};
 
 const AddPostForm = props => {
   return (
     <form onSubmit={props.handleSubmit}>
       <div className={classes.changePost}>
         <Field
-          component="textarea"
+          validate={[required, maxLength50]}
+          component={Textarea}
           name="newPostText"
           placeholder="Share anything with your friends"
         />

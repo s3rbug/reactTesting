@@ -1,8 +1,10 @@
 import React from "react";
+import { compose } from "redux";
+import withAuthRedirect from "../../common/hoc/withAuthRedirect";
 // import classes from './Settings.module.css'
 
-function Settings(props) {
+const Settings = props => {
   return <div>Settings</div>;
-}
+};
 
-export default Settings;
+export default compose(withAuthRedirect)(Settings);
