@@ -1,16 +1,26 @@
 import React from "react";
-import styles from "./FormsControls.module.css";
+import classes from "./FormsControls.module.css";
+import Tooltip from "react-power-tooltip";
 
 const FormControl = ({ input, meta, child, ...props }) => {
     const hasError = meta.touched && meta.error;
     return (
-        <div className={styles.formControl + " " + (hasError ? styles.error : "")}>
+        <div className={classes.formControl + " " + (hasError ? classes.error : "")}>
             <div>
                 {props.children}
+                <Tooltip alert={'true'} show={hasError} static position={directionChooser(input.name)}>
+                    <span className={classes.tooltipText}>{meta.error}</span>
+                </Tooltip>
             </div>
-            {hasError && <span>{meta.error}</span>}
         </div>
     )
+}
+
+const directionChooser = (name) => {
+    if (name === "email")
+        return "top left";
+    else
+        return "left center";
 }
 
 export const Textarea = (props) => {

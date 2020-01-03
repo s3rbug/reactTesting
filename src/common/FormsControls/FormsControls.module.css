@@ -3,6 +3,10 @@
   border: 2px solid red;
 }
 
-.error span {
-  color: red;
+.formControl {
+  position: relative;
+}
+
+.tooltipText {
+  color: black;
 }
