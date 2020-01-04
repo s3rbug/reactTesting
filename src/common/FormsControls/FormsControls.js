@@ -8,7 +8,7 @@ const FormControl = ({ input, meta, child, ...props }) => {
         <div className={classes.formControl + " " + (hasError ? classes.error : "")}>
             <div>
                 {props.children}
-                <Tooltip alert={'true'} show={hasError} static position={directionChooser(input.name)}>
+                <Tooltip show={hasError} static position={directionChooser(input.name)}>
                     <span className={classes.tooltipText}>{meta.error}</span>
                 </Tooltip>
             </div>

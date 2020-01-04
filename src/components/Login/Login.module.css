@@ -7,3 +7,7 @@
 .notVisible {
   display: none;
 }
+
+.form {
+  position: relative;
+}

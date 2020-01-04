@@ -2,6 +2,7 @@ import { profileAPI } from './../api/api'
 import defaultImage from './../assets/defaultImage.jpg'
 
 const ADD_POST = 'ADD-POST';
+const DELETE_POST = 'DELETE-POST';
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
 const SET_STATUS = 'SET-STATUS'
 
@@ -16,7 +17,7 @@ let initialState = {
 }
 
 function profileReducer(state = initialState, action) {
-    if (action.type === ADD_POST && action.newPost !== '') {
+    if (action.type === ADD_POST) {
         let newPost = {
             id: state.posts[state.posts.length - 1].id + 1,
             userId: state.profile.userId,
@@ -28,6 +29,15 @@ function profileReducer(state = initialState, action) {
         }
 
         return { ...state, newPostText: '', posts: [...state.posts, newPost] };
+    }
+    else if (action.type === DELETE_POST) {
+        let posts1 = state.posts.filter(el => {
+            return el.id !== action.deletedPostId
+        });
+        return {
+            ...state,
+            posts: posts1
+        }
     }
     else if (action.type === SET_USER_PROFILE) {
         if (state.profile !== null)
@@ -43,6 +53,7 @@ function profileReducer(state = initialState, action) {
 }
 
 export const addPost = (newPost) => ({ type: ADD_POST, newPost })
+export const deletePost = (deletedPostId) => ({ type: DELETE_POST, deletedPostId })
 export const setUserProfile = (info) => ({ type: SET_USER_PROFILE, info })
 export const setNewStatus = (status) => ({ type: SET_STATUS, status })
 
@@ -57,8 +68,6 @@ export const setUser = (userId) => {
 
 export const getStatus = (userId) => {
     return (dispatch) => {
-        if (isNaN(userId))
-            userId = 5515;
         profileAPI.getStatus(userId)
             .then((response) => {
                 dispatch(setNewStatus(response))

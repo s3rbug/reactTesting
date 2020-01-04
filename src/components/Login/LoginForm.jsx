@@ -3,10 +3,11 @@ import { reduxForm, Field } from "redux-form";
 import { Input } from "./../../common/FormsControls/FormsControls";
 import { required } from "../../utils/validators/validators";
 import classes from "./Login.module.css";
+import Tooltip from "react-power-tooltip";
 
 const LoginForm = props => {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={props.handleSubmit} className={classes.form}>
       <div>
         <Field
           name="email"
@@ -28,9 +29,9 @@ const LoginForm = props => {
         <Field name="rememberMe" component="input" type="checkbox" />
         Remember me
       </div>
-      <div className={props.error ? classes.summaryError : classes.notVisible}>
-        {props.error}
-      </div>
+      <Tooltip show={props.error} static position="left center">
+        <span>{props.error}</span>
+      </Tooltip>
       <div>
         <button>Sign up</button>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./ProfileInfo.module.css";
 import Preloader from "../../../common/Preloader/Preloader";
 import defaultImage from "./../../../assets/defaultImage.jpg";
-import ProfileStatus from "./ProfileStatus/ProfileStatus";
+import ProfileStatusHooks from "./ProfileStatus/ProfileStatus";
 
 function ProfileInfo(props) {
   if (!props.profile) {
@@ -30,7 +30,7 @@ function ProfileInfo(props) {
         <br />
         <span>{props.profile.fullName}</span>
         <br />
-        <ProfileStatus
+        <ProfileStatusHooks
           status={props.status}
           updateStatus={props.updateStatus}
         />
