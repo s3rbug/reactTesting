@@ -1,0 +1,24 @@
+.notVisible {
+  visibility: hidden;
+}
+
+.spanWrapper span {
+  user-select: none;
+  cursor: pointer;
+}
+
+.selected {
+  color: darkkhaki;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.notSelected {
+  color: white;
+  font-size: large;
+}
+
+.slide {
+  font-size: x-large;
+  color: white;
+}

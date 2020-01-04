@@ -4,8 +4,8 @@ import Preloader from "../../../common/Preloader/Preloader";
 import defaultImage from "./../../../assets/defaultImage.jpg";
 import ProfileStatusHooks from "./ProfileStatus/ProfileStatus";
 
-function ProfileInfo(props) {
-  if (!props.profile) {
+const ProfileInfo = ({ profile, status, updateStatus }) => {
+  if (!profile) {
     return <Preloader />;
   }
   return (
@@ -18,29 +18,29 @@ function ProfileInfo(props) {
         ></img>
       </div>
       <div className={classes.description}>
-        <img
-          id={classes.ava}
-          src={
-            props.profile.photos.large === null
-              ? defaultImage
-              : props.profile.photos.large
-          }
-          alt="profilePhoto"
-        />
-        <br />
-        <span>{props.profile.fullName}</span>
-        <br />
-        <ProfileStatusHooks
-          status={props.status}
-          updateStatus={props.updateStatus}
-        />
-        <br />
-        <span>
-          {props.profile.lookingForAJob ? "Looking for a job" : "Has a job"}
-        </span>
+        <div>
+          <img
+            id={classes.ava}
+            src={
+              profile.photos.large === null
+                ? defaultImage
+                : profile.photos.large
+            }
+            alt="profilePhoto"
+          />
+        </div>
+        <div>
+          <span>{profile.fullName}</span>
+        </div>
+        <ProfileStatusHooks status={status} updateStatus={updateStatus} />
+        <div>
+          <span>
+            {profile.lookingForAJob ? "Looking for a job" : "Has a job"}
+          </span>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default ProfileInfo;

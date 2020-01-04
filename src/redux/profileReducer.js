@@ -1,10 +1,10 @@
 import { profileAPI } from './../api/api'
 import defaultImage from './../assets/defaultImage.jpg'
 
-const ADD_POST = 'ADD-POST';
-const DELETE_POST = 'DELETE-POST';
-const SET_USER_PROFILE = 'SET-USER-PROFILE'
-const SET_STATUS = 'SET-STATUS'
+const ADD_POST = 'profile/ADD-POST';
+const DELETE_POST = 'profile/DELETE-POST';
+const SET_USER_PROFILE = 'profile/SET-USER-PROFILE'
+const SET_STATUS = 'profile/SET-STATUS'
 
 let initialState = {
     posts: [
@@ -58,31 +58,25 @@ export const setUserProfile = (info) => ({ type: SET_USER_PROFILE, info })
 export const setNewStatus = (status) => ({ type: SET_STATUS, status })
 
 export const setUser = (userId) => {
-    return (dispatch) => {
-        profileAPI.getUser(userId)
-            .then(response => {
-                dispatch(setUserProfile(response))
-            })
+    return async dispatch => {
+        const response = await profileAPI.getUser(userId)
+        dispatch(setUserProfile(response))
     }
 }
 
 export const getStatus = (userId) => {
-    return (dispatch) => {
-        profileAPI.getStatus(userId)
-            .then((response) => {
-                dispatch(setNewStatus(response))
-            })
+    return async dispatch => {
+        const response = await profileAPI.getStatus(userId)
+        dispatch(setNewStatus(response))
     }
 }
 
 export const updateStatus = (status) => {
-    return (dispatch) => {
-        profileAPI.updateStatus(status)
-            .then((response) => {
-                if (response.resultCode === 0) {
-                    dispatch(setNewStatus(response))
-                }
-            })
+    return async dispatch => {
+        const response = await profileAPI.updateStatus(status)
+        if (response.resultCode === 0) {
+            dispatch(setNewStatus(response))
+        }
     }
 }
 

@@ -5,9 +5,9 @@ import { required } from "../../utils/validators/validators";
 import classes from "./Login.module.css";
 import Tooltip from "react-power-tooltip";
 
-const LoginForm = props => {
+const LoginForm = ({ handleSubmit, error }) => {
   return (
-    <form onSubmit={props.handleSubmit} className={classes.form}>
+    <form onSubmit={handleSubmit} className={classes.form}>
       <div>
         <Field
           name="email"
@@ -29,8 +29,8 @@ const LoginForm = props => {
         <Field name="rememberMe" component="input" type="checkbox" />
         Remember me
       </div>
-      <Tooltip show={props.error} static position="left center">
-        <span>{props.error}</span>
+      <Tooltip show={error} static position="left center">
+        <span>{error}</span>
       </Tooltip>
       <div>
         <button>Sign up</button>

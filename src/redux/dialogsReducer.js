@@ -1,4 +1,4 @@
-const SEND_MESSAGE = 'SEND-MESSAGE';
+const SEND_MESSAGE = 'dialogs/SEND-MESSAGE';
 
 let initialState = {
     messages: [
@@ -17,7 +17,7 @@ let initialState = {
     ]
 }
 
-function dialogsReducer(state = initialState, action) {
+const dialogsReducer = (state = initialState, action) => {
     let stateCopy = { ...state }
     if (action.type === SEND_MESSAGE) {
         stateCopy.messages.push({ id: stateCopy.messages[stateCopy.messages.length - 1].id + 1, message: action.message })

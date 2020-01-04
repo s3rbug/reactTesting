@@ -1,8 +1,7 @@
-.photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
+.notVisible {
+  visibility: hidden;
 }
+
 .btn,
 .btn2 {
   color: #494949 !important;
@@ -47,31 +46,12 @@
   transition: all 0.4s ease 0s;
 }
 
+.photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
 .info div {
   color: white;
-}
-
-.selected {
-  color: darkkhaki;
-  font-weight: bold;
-  font-size: x-large;
-}
-
-.notSelected {
-  color: white;
-  font-size: large;
-}
-
-.notVisible {
-  visibility: hidden;
-}
-
-.slide {
-  font-size: x-large;
-  color: white;
-}
-
-.spanWrapper span {
-  user-select: none;
-  cursor: pointer;
 }
