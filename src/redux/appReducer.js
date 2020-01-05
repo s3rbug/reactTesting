@@ -22,13 +22,10 @@ export const initializedSuccess = () => ({ type: INITIALIZED_SUCCESS });
 
 export const initializeApp = () => async (dispatch) => {
     const promise = dispatch(setMyProfile());
-
-    let allPromise = await Promise.all([promise])
-    dispatch(initializedSuccess());
-    // Promise.all([promise])
-    //     .then(() => {
-    //         dispatch(initializedSuccess());
-    //     });
+    Promise.all([promise])
+        .then(() => {
+            dispatch(initializedSuccess());
+        });
 }
 
 export default appReducer;
