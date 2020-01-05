@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/reactTesting/profile/static/css/main.2498d43c.chunk.css",
-    "main.js": "/reactTesting/profile/static/js/main.44d7d612.chunk.js",
-    "main.js.map": "/reactTesting/profile/static/js/main.44d7d612.chunk.js.map",
-    "runtime-main.js": "/reactTesting/profile/static/js/runtime-main.f3418e68.js",
-    "runtime-main.js.map": "/reactTesting/profile/static/js/runtime-main.f3418e68.js.map",
-    "static/js/2.ea29a60f.chunk.js": "/reactTesting/profile/static/js/2.ea29a60f.chunk.js",
-    "static/js/2.ea29a60f.chunk.js.map": "/reactTesting/profile/static/js/2.ea29a60f.chunk.js.map",
-    "index.html": "/reactTesting/profile/index.html",
-    "precache-manifest.d8e12a7fd8172d9e99041c00a873b5fa.js": "/reactTesting/profile/precache-manifest.d8e12a7fd8172d9e99041c00a873b5fa.js",
-    "service-worker.js": "/reactTesting/profile/service-worker.js",
-    "static/css/main.2498d43c.chunk.css.map": "/reactTesting/profile/static/css/main.2498d43c.chunk.css.map",
-    "static/js/2.ea29a60f.chunk.js.LICENSE": "/reactTesting/profile/static/js/2.ea29a60f.chunk.js.LICENSE",
-    "static/media/spinner.svg": "/reactTesting/profile/static/media/spinner.2aea4710.svg"
+    "main.css": "/reactTesting/static/css/main.2498d43c.chunk.css",
+    "main.js": "/reactTesting/static/js/main.e696cd58.chunk.js",
+    "main.js.map": "/reactTesting/static/js/main.e696cd58.chunk.js.map",
+    "runtime-main.js": "/reactTesting/static/js/runtime-main.d9421d23.js",
+    "runtime-main.js.map": "/reactTesting/static/js/runtime-main.d9421d23.js.map",
+    "static/js/2.ea29a60f.chunk.js": "/reactTesting/static/js/2.ea29a60f.chunk.js",
+    "static/js/2.ea29a60f.chunk.js.map": "/reactTesting/static/js/2.ea29a60f.chunk.js.map",
+    "index.html": "/reactTesting/index.html",
+    "precache-manifest.17c4112c72d8c044cf6cb5321dc12836.js": "/reactTesting/precache-manifest.17c4112c72d8c044cf6cb5321dc12836.js",
+    "service-worker.js": "/reactTesting/service-worker.js",
+    "static/css/main.2498d43c.chunk.css.map": "/reactTesting/static/css/main.2498d43c.chunk.css.map",
+    "static/js/2.ea29a60f.chunk.js.LICENSE": "/reactTesting/static/js/2.ea29a60f.chunk.js.LICENSE",
+    "static/media/spinner.svg": "/reactTesting/static/media/spinner.2aea4710.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f3418e68.js",
+    "static/js/runtime-main.d9421d23.js",
     "static/js/2.ea29a60f.chunk.js",
     "static/css/main.2498d43c.chunk.css",
-    "static/js/main.44d7d612.chunk.js"
+    "static/js/main.e696cd58.chunk.js"
   ]
 }
